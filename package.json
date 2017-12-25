@@ -1,0 +1,84 @@
+{
+  "name": "hello-electron",
+  "version": "1.0.0",
+  "productName": "hello electron",
+  "description": "A simple, beautiful and elegant place for writing",
+  "author": "Arpit Bansal <arpit3ansal@gmail.com>",
+  "copyright": "© 2018, Arpit Bansal",
+  "homepage": "http://umbrellanote.com",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "gh-publish": "electron-builder -p always"
+  },
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "electron": "~1.6.2",
+    "electron-builder": "^19.43.4",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "electron-log": "^2.2.13",
+    "electron-updater": "^2.17.6",
+    "jquery": "^3.2.1",
+    "url": "^0.11.0"
+  },
+  "build": {
+    "appId": "com.arpban.helloelectron",
+    "productName": "hello electron",
+    "copyright": "copyright © 2018, Arpit Bansal",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "resources"
+    },
+    "dmg": {
+      "title": "umbrella note",
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "category": "productivity",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "publish": ["github"]
+    }
+  }
+}
